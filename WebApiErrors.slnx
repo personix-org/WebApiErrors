@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/docs/">
+    <File Path="docs\README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Personix.ApiErrors.Exceptions/Personix.ApiErrors.Exceptions.csproj" Type="Classic C#" />
+    <Project Path="src/Personix.WebApiErrors/Personix.WebApiErrors.csproj" Type="Classic C#" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Personix.ApiErrors.Exceptions.Tests/Personix.ApiErrors.Exceptions.Tests.csproj" Type="Classic C#" />
+    <Project Path="tests/Personix.WebApiErrors.Tests/Personix.WebApiErrors.Tests.csproj" Type="Classic C#" />
+  </Folder>
+</Solution>

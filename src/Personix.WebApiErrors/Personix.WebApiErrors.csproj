@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>Personix.WebApiErrors</PackageId>
+    <AssemblyName>Personix.WebApiErrors</AssemblyName>
+    <RootNamespace>Personix.WebApiErrors</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Pavel Kudrna</Authors>
+    <Company>Personix</Company>
+    <Product>Personix.WebApiErrors</Product>
+    <Description>RFC 9457 Problem Details base types for HTTP APIs. A three-layer record hierarchy — a base carrying the standard fields plus a trace id, status-specific abstractions that fill in the correct RFC type URI, and your own concrete error per endpoint — so every error response in a service has the same shape without repeating the boilerplate.</Description>
+    <Copyright>Copyright (c) 2026 Personix</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/personix-org/WebApiErrors</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/personix-org/WebApiErrors</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>problem-details;rfc9457;rfc7807;error-handling;webapi;aspnetcore;http</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Needed by the TypedResults helpers. Adding it makes the package web-only, which matches
+         what it is for — the problem records themselves stay plain data with no framework types
+         in their surface, so they still serialise anywhere. -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      No reference to Personix.ApiErrors.Exceptions on purpose. Nothing here uses it, and the two
+      packages are meant for different layers: the exceptions go where domain code throws, these
+      types go where HTTP responses are written. A project reference would become a hard NuGet
+      dependency, dragging the exceptions into every consumer of the web package and undoing the
+      separation the README describes. The pairing between an exception and its error lives in the
+      consumer's mapper, not in either package.
+    -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.301" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>

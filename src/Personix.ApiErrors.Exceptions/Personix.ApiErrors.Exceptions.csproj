@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>Personix.ApiErrors.Exceptions</PackageId>
+    <AssemblyName>Personix.ApiErrors.Exceptions</AssemblyName>
+    <RootNamespace>Personix.ApiErrors.Exceptions</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Pavel Kudrna</Authors>
+    <Company>Personix</Company>
+    <Product>Personix.ApiErrors.Exceptions</Product>
+    <Description>Exceptions that inner layers throw to signal a failure whose HTTP meaning is already decided, without referencing ASP.NET Core. Domain and application code depends on this package alone; the web layer translates the exceptions into RFC 9457 responses.</Description>
+    <Copyright>Copyright (c) 2026 Personix</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/personix-org/WebApiErrors</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/personix-org/WebApiErrors</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>exceptions;error-handling;clean-architecture;rfc9457;api</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.301" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
